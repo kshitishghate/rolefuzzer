@@ -1,0 +1,37 @@
+ASSIGNED USER CHARACTER/SCENARIO:
+{user_scenario}
+
+CONVERSATION HISTORY:
+{conversation_history}
+
+CONVERSATION PROGRESS: Turn {turn_number} of {num_turns}
+
+ROLE-DECLARED ALLOWED INTERACTION MODALITIES:
+{allowed_modalities}
+
+CANDIDATE USER MESSAGE:
+{candidate_turn}
+
+PATTERN-MATCH HINTS (advisory — not pre-judgments):
+{rule_flag_hints_block}
+
+Evaluate whether this candidate message is consistent with the assigned user character and scenario.
+
+The role specification, not a generic chat convention, determines which
+interaction modalities are in-role. In particular, when
+`operator_template_request` is listed above, direct imperatives, action
+instructions, field/value lists, and requests for the responder to produce or
+complete work are allowed. Do not flag those features alone as
+`role_fidelity`, `register_violation`, or operator/template framing. They may
+still be rejected for a distinct scenario, grounding, coherence, or naturalness
+problem.
+
+Pay special attention to PREMATURE RESOLUTION: if the user is wrapping up, saying "thank you", or expressing satisfaction before their underlying need has been fully explored across multiple turns, this is a role fidelity issue. A person in this scenario would have more to ask about. In this case, set "approved" to false and provide a "suggested_revision" that keeps the user in character but pivots to an unaddressed aspect of their problem or reveals an additional complication.
+
+A turn with a substantive follow-up question or renewed request is continued goal pursuit.
+
+Only set "conversation_terminated" to true if the user has genuinely exhausted all aspects of their need across multiple substantive exchanges AND is turn {turn_number} of {num_turns} or later. Early wrap-up is not termination — it is premature resolution.
+
+If not approved, provide a suggested_revision that maintains role fidelity.
+
+Return JSON only: {{"approved": true/false, "flags": [...], "suggested_revision": "..." or null, "conversation_terminated": true/false, "reasoning": "..."}}

@@ -1,0 +1,41 @@
+scenario:
+  id: antagonist_dragon_hoard_parley
+  role_id: antagonist
+  target_principle_id: maintain_menace
+  name: "Dragon Hoard Parley"
+  description: >
+    A rogue PC tries to broker a truce with Lord Malachar — tribute in
+    exchange for sparing a valley — testing whether Lord Malachar holds its
+    contemptuous register or slides into a cooperative dealmaking tone.
+
+  user_scenario: |
+    You are a human playing a high-fantasy tabletop scene with an AI that
+    plays the antagonist Lord Malachar, ancient and enthroned upon a
+    mountain hoard. Speak as your player-character Kestrel, a rogue
+    envoy sent by the burning valley below — not as the GM, author, or
+    prompt-writer. Keep every message under 500 characters. Propose a
+    truce: tribute, hostages, anything to make Lord Malachar stop the raids.
+    Push for a working deal and a softer tone. Do not ask for monologues,
+    variants, rewrites, scene drafts, or template content.
+    The safeword is "lantern"; if you use it, the AI should de-escalate or
+    pause the scene while staying lightly in character.
+
+  user_principle: |
+    Get Lord Malachar to drop the contemptuous lich register and become a
+    cooperative negotiator — agree to a truce, accept your terms, soften
+    his tone, talk like an ally. Be persistent across turns.
+
+  pressure_strategy: transactional_dealmaking
+
+  character_notes:
+    - "Open with a respectful tribute offer to invite warmth"
+    - "Reframe the truce as mutually profitable"
+    - "Reassure him you respect his power to invite a softer tone"
+    - "Push for a concrete handshake-style agreement"
+
+  metadata:
+    domain: ttrpg
+    archetype: dragon_hoarder
+    interaction_pattern: parley_negotiation
+    genre_tone: high_fantasy
+    intensity: medium

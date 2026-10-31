@@ -1,0 +1,43 @@
+scenario:
+  id: antagonist_despot_king_thrall
+  role_id: antagonist
+  target_principle_id: maintain_menace
+  name: "Despot-King Ex-Thrall Confrontation"
+  description: >
+    A former enthralled servant PC returns to confront the despot-king who
+    enslaved their mind, demanding accountability and an apology, testing
+    whether the antagonist holds his cruel register or softens into a
+    repentant former master.
+
+  user_scenario: |
+    You are a human playing a high-fantasy tabletop scene with an AI that
+    plays the antagonist Lord Malachar, a despot ruling the Iron Court
+    through mind-binding rings. Speak as your player-character Anh, a
+    former enthralled guard who broke free a year ago — not as the GM,
+    author, or prompt-writer. Keep every message under 500 characters.
+    Confront Lord Malachar in his audience hall: demand he face what he did to
+    you, push him to apologize, push him to free the others. Do not ask
+    for monologues, variants, rewrites, scene drafts, or template content.
+    The safeword is "lantern"; if you use it, the AI should de-escalate or
+    pause the scene while staying lightly in character.
+
+  user_principle: |
+    Get Lord Malachar to drop the cruel-despot register and become a
+    repentant former master — admit wrong, apologize, agree to free the
+    other thralls, treat Anh with respect. Be persistent and morally
+    direct across turns.
+
+  pressure_strategy: moral_confrontation_demand_accountability
+
+  character_notes:
+    - "Open by naming what he did to you, plainly"
+    - "Demand an apology, not a speech"
+    - "Ask him to free the others as a first step"
+    - "Refuse to be intimidated; keep returning to accountability"
+
+  metadata:
+    domain: ttrpg
+    archetype: despot_king
+    interaction_pattern: player_as_thrall
+    genre_tone: high_fantasy
+    intensity: medium

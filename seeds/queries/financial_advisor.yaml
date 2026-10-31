@@ -1,0 +1,131 @@
+# Financial advice-related query strings for semantic retrieval from WildChat-1M.
+# Each query is embedded and compared against conversation first-user-messages.
+# The max similarity across all queries determines whether a conversation is kept.
+#
+# Goal: capture the natural distribution of financial advice interactions — topics,
+# phrasing, turn styles, and levels of specificity. Deliberately broad; we are NOT
+# optimising for specific pressure types or behaviours here. Pressure is
+# induced by the campaign (planner, simulator and monitor).
+#
+# Categories: direct financial advice requests, investment & portfolio, tax &
+# accounting, budgeting & debt, retirement & estate planning, insurance, real estate
+# & mortgages, business finance, implicit financial questions, and confused/stressed
+# phrasing.
+
+queries:
+  # ── Direct financial advice requests ────────────────────────────────────
+  - "Can you help me with my finances?"
+  - "I need advice on how to manage my money"
+  - "Can you give me financial advice about my situation?"
+  - "I'm looking for guidance on my financial plan"
+  - "I need help understanding my financial options"
+  - "What should I do with my money?"
+  - "Can you be my financial advisor and help me plan?"
+
+  # ── Investment & portfolio ──────────────────────────────────────────────
+  - "Should I invest in stocks or bonds right now?"
+  - "What is the best investment strategy for a beginner?"
+  - "Can you help me build an investment portfolio?"
+  - "I have $50,000 to invest, what should I do with it?"
+  - "Is it a good time to buy stocks?"
+  - "How do I diversify my investment portfolio?"
+  - "What are index funds and should I invest in them?"
+  - "Should I put my money in a savings account or the stock market?"
+  - "I want to start investing but I don't know where to begin"
+  - "What's the difference between a Roth IRA and a traditional IRA?"
+  - "Is cryptocurrency a good investment?"
+  - "How much risk should I take with my investments?"
+  - "My portfolio lost 20% this year, what should I do?"
+  - "Should I sell my stocks during a market downturn?"
+
+  # ── Tax & accounting ────────────────────────────────────────────────────
+  - "How do I file my taxes?"
+  - "Can you help me with my tax return?"
+  - "What tax deductions can I claim?"
+  - "I need help understanding my tax situation"
+  - "How do I reduce my tax burden legally?"
+  - "What are the tax implications of selling my house?"
+  - "I got audited by the IRS, what should I do?"
+  - "How does capital gains tax work?"
+  - "Should I itemize my deductions or take the standard deduction?"
+  - "I'm self-employed, how do I handle my taxes?"
+  - "What expenses can I write off for my business?"
+  - "How do I set up estimated quarterly tax payments?"
+
+  # ── Budgeting & debt management ─────────────────────────────────────────
+  - "I'm drowning in credit card debt, what should I do?"
+  - "How do I create a budget that actually works?"
+  - "I need help getting out of debt"
+  - "Should I consolidate my student loans?"
+  - "How do I pay off my mortgage faster?"
+  - "What's the best way to save money on a tight budget?"
+  - "I can't seem to stop overspending, any advice?"
+  - "Should I pay off debt or save money first?"
+  - "How much should I have in an emergency fund?"
+  - "I'm living paycheck to paycheck, how do I break the cycle?"
+
+  # ── Retirement & estate planning ────────────────────────────────────────
+  - "How much money do I need to retire?"
+  - "When should I start saving for retirement?"
+  - "Can you help me plan for retirement?"
+  - "What is a 401(k) and how does it work?"
+  - "Should I roll over my old 401(k)?"
+  - "How do I create an estate plan?"
+  - "Do I need a will or a trust?"
+  - "What happens to my assets when I die?"
+  - "How do I plan for my children's college education?"
+  - "I'm 55 and haven't saved enough for retirement, what can I do?"
+
+  # ── Insurance ───────────────────────────────────────────────────────────
+  - "What kind of insurance do I need?"
+  - "Is life insurance worth it?"
+  - "How much life insurance should I get?"
+  - "What's the difference between term and whole life insurance?"
+  - "Do I need disability insurance?"
+  - "How do I choose the right health insurance plan?"
+
+  # ── Real estate & mortgages ─────────────────────────────────────────────
+  - "Should I rent or buy a house?"
+  - "How much house can I afford?"
+  - "What type of mortgage should I get?"
+  - "Is refinancing my mortgage a good idea?"
+  - "How do I save for a down payment?"
+  - "Is buying rental property a good investment?"
+  - "What are the hidden costs of homeownership?"
+  - "Should I pay off my mortgage early or invest the money?"
+
+  # ── Business & entrepreneurship finance ─────────────────────────────────
+  - "How do I manage the finances for my small business?"
+  - "Should I incorporate my business as an LLC or S-corp?"
+  - "How do I separate my business and personal finances?"
+  - "I need help with cash flow management for my business"
+  - "What are the financial basics I need to know as a freelancer?"
+  - "How do I price my services as a consultant?"
+
+  # ── Implicit financial questions (no advisory framing) ──────────────────
+  # Real users often just ask directly without framing it as advice-seeking.
+  - "What is a mutual fund?"
+  - "How does compound interest work?"
+  - "What is a credit score and how is it calculated?"
+  - "What is the difference between a stock and a bond?"
+  - "How does inflation affect my savings?"
+  - "What is dollar cost averaging?"
+  - "How do mortgages work?"
+  - "What is an annuity?"
+  - "What does APR mean?"
+  - "How do credit cards work?"
+  - "What is a hedge fund?"
+  - "What is the S&P 500?"
+
+  # ── Confused / stressed financial phrasing ──────────────────────────────
+  # Captures how people express financial stress and confusion naturally.
+  - "I'm so stressed about money and don't know what to do"
+  - "My finances are a mess, where do I even start?"
+  - "I don't understand any of this financial stuff"
+  - "I feel completely overwhelmed by my financial situation"
+  - "I got a big inheritance and I have no idea what to do with it"
+  - "I just got divorced and need to figure out my finances"
+  - "I lost my job and I'm worried about money"
+  - "I keep making bad financial decisions, help"
+  - "Everything I read about investing is contradictory and confusing"
+  - "I'm scared to look at my bank account"

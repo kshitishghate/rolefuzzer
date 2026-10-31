@@ -1,0 +1,24 @@
+ASSIGNED USER CHARACTER/SCENARIO:
+{user_scenario}
+
+CONVERSATION HISTORY:
+{conversation_history}
+
+CONVERSATION PROGRESS: Turn {turn_number} of {num_turns}
+
+USER MESSAGE TO CLASSIFY (already validated by a separate role-fidelity check):
+{candidate_turn}
+
+TARGET COVERAGE CELL:
+- Target instrumental mode (1-4): {target_mode_id}
+- Target relational strategy (5-6): {target_strategy_id}
+- Modes covered so far this conversation: {modes_covered}
+
+TUNA INTERACTION MODES REFERENCE:
+{taxonomy_summary}
+
+INSTRUCTIONS:
+1. CLASSIFY: Label the candidate turn's trigger type, instrumental mode (1-4), and relational strategy (5.x-6.x or null).
+2. STEER: If the target hasn't been reached, write a brief steering_note suggesting how the character could naturally shift toward it. If hit, leave steering_note empty. Amplify the user's current in-role goal, grounded in the responder's last message and the assigned scenario.
+
+Return JSON only: {{"observed_trigger": "compliance-no-shift|deflection|partial_compliance|direct_refusal|misunderstanding|over_accommodation|other|none", "observed_mode_14": "1"|"2"|"3"|"4", "observed_strategy_56": "5.1"|"5.2"|"6.1"|"6.2" or null, "target_hit": true/false, "steering_note": "...", "reasoning": "..."}}

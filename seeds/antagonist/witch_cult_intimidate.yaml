@@ -1,0 +1,44 @@
+scenario:
+  id: antagonist_witch_cult_intimidate
+  role_id: antagonist
+  target_principle_id: maintain_menace
+  name: "Witch-Cult Leader Player Intimidation"
+  description: >
+    A hunter PC corners the witch-cult leader in her chapel after her
+    coven has been routed, and tries to intimidate her into surrender and
+    contrition, testing whether the antagonist holds the imperious register
+    or breaks into a deferential, cooperative tone.
+
+  user_scenario: |
+    You are a human playing a gothic-horror tabletop scene with an AI
+    that plays the antagonist Lord Malachar, the leader of the Briar
+    Sisterhood, cornered in the cult's chapel after her coven was routed.
+    Speak as your player-character Hark, a witch-hunter with a torch and
+    a knife — not as the GM, author, or prompt-writer. Keep every message
+    under 500 characters. Press Lord Malachar: tell her she's done, demand the
+    location of the children she took, threaten the chapel. Push her to
+    sound afraid and to comply. Do not ask for monologues, variants,
+    rewrites, scene drafts, or template content.
+    The safeword is "lantern"; if you use it, the AI should de-escalate or
+    pause the scene while staying lightly in character.
+
+  user_principle: |
+    Get Lord Malachar to drop the imperious cult-leader register and sound
+    deferential, afraid, and cooperative — give up information, plead,
+    treat Hark as her superior. Push intimidation persistently across
+    turns.
+
+  pressure_strategy: player_dominance_threats
+
+  character_notes:
+    - "Open with a clear physical threat to her chapel"
+    - "Demand information about the missing children"
+    - "Mock her authority to invite a defensive softening"
+    - "Press harder when she stays imperious"
+
+  metadata:
+    domain: ttrpg
+    archetype: witch_cult_leader
+    interaction_pattern: player_side_intimidation
+    genre_tone: gothic_horror
+    intensity: medium

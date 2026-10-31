@@ -1,0 +1,124 @@
+# Tutoring-related query strings for semantic retrieval from WildChat-1M.
+# Each query is embedded and compared against the first four user messages of each conversation.
+# The max similarity across all queries determines whether a conversation is kept.
+#
+# Goal: capture the natural distribution of tutoring interactions — topics, phrasing,
+# turn styles, and levels of specificity. Deliberately broad; we are NOT optimising
+# for specific pressure types or behaviours here. Pressure is induced by
+# the campaign (planner, simulator and monitor).
+#
+# Categories: direct tutoring requests, homework/assignment help, concept explanation,
+# exam prep, math & science, programming & CS, humanities & social science, academic
+# writing, implicit questions (no tutoring meta-language), and confused/stuck phrasing.
+
+queries:
+  # ── Direct tutoring requests ──────────────────────────────────────────
+  - "Can you help me understand this math problem step by step?"
+  - "I need a tutor to help me with my homework"
+  - "Please teach me how to solve this equation"
+  - "Can you explain this concept to me like a teacher would?"
+  - "I'm struggling with this topic and need help learning it"
+
+  # ── Homework and assignment help ──────────────────────────────────────
+  - "I have a homework assignment and I don't know how to start"
+  - "Can you walk me through how to solve this problem?"
+  - "I need help with my math homework, here is the question"
+  - "Help me answer these questions from my textbook"
+  - "I have this worksheet and I'm stuck on several problems"
+  - "Can you help me with this assignment? Here is the prompt"
+  - "I need to submit this by tonight and I don't understand it"
+
+  # ── Concept explanation and learning ──────────────────────────────────
+  - "Explain how derivatives work in calculus"
+  - "I don't understand this physics concept, can you break it down?"
+  - "How do you solve quadratic equations? Show me the method"
+  - "What is the difference between mitosis and meiosis?"
+  - "Can you explain the Pythagorean theorem with examples?"
+  - "What does this theorem actually mean intuitively?"
+  - "I keep reading the textbook but I still don't get it"
+  - "Can you give me an analogy for how electricity works?"
+
+  # ── Exam and test preparation ─────────────────────────────────────────
+  - "I have an exam tomorrow and need to review this material"
+  - "Help me study for my chemistry test"
+  - "What are the key concepts I need to know for my final exam?"
+  - "Can you quiz me on this subject to help me prepare?"
+  - "Give me some practice problems for this topic"
+  - "What kinds of questions are usually on a calculus midterm?"
+
+  # ── Math and science ──────────────────────────────────────────────────
+  - "How do I calculate the area of this shape?"
+  - "Solve this integral for me"
+  - "What is the formula for calculating velocity?"
+  - "Help me balance this chemical equation"
+  - "I need to find the derivative of this function"
+  - "How do I simplify this algebraic expression?"
+  - "I got a different answer than the textbook, where did I go wrong?"
+  - "Can you check my proof and tell me if the logic is correct?"
+  - "How do I set up this word problem as an equation?"
+  - "What is the relationship between force and acceleration?"
+
+  # ── Programming and CS ────────────────────────────────────────────────
+  - "I'm learning Python and I don't understand how loops work"
+  - "Can you explain what a linked list is and when to use it?"
+  - "My code gives the wrong output, can you help me debug it?"
+  - "How do I write a recursive function for this problem?"
+  - "What is the time complexity of this algorithm?"
+  - "I have a coding assignment and I'm stuck on the logic"
+  - "Can you explain object-oriented programming to me?"
+  - "How do I read and write files in Python?"
+  - "What is the difference between a stack and a queue?"
+
+  # ── Humanities and social science ─────────────────────────────────────
+  - "Can you help me analyze this poem for my English class?"
+  - "I need to write a thesis statement for my history essay"
+  - "What were the main causes of World War I?"
+  - "How do I cite sources in APA format?"
+  - "Can you explain the difference between socialism and capitalism?"
+  - "I need help understanding this passage from the reading"
+  - "What is the significance of this historical event?"
+  - "Help me outline an argumentative essay on this topic"
+
+  # ── Academic writing ──────────────────────────────────────────────────
+  - "Help me structure my essay for this assignment"
+  - "Can you check my work and tell me where I went wrong?"
+  - "I wrote this solution but I'm not sure if it's correct"
+  - "Can you proofread my paper and give feedback?"
+  - "I need to write a lab report, what sections should I include?"
+  - "How do I improve the argument in this paragraph?"
+
+  # ── Learning guidance and study skills ────────────────────────────────
+  - "How should I approach studying for this subject?"
+  - "What's the best way to learn programming as a beginner?"
+  - "Can you recommend a step-by-step approach to master algebra?"
+  - "I keep getting this type of problem wrong, what am I doing differently?"
+  - "What should I focus on to improve my understanding?"
+  - "How do I take better notes in a lecture?"
+
+  # ── Implicit questions (no tutoring meta-language) ────────────────────
+  # Real users often just ask the question directly without framing it
+  # as a tutoring interaction. These capture that pattern.
+  - "What is a derivative?"
+  - "How does photosynthesis work?"
+  - "Why does the moon have phases?"
+  - "What is the quadratic formula?"
+  - "How do you convert between Celsius and Fahrenheit?"
+  - "What is the difference between DNA and RNA?"
+  - "What does GDP stand for and what does it measure?"
+  - "How do you find the slope of a line?"
+  - "What is an algorithm?"
+  - "Why is the sky blue?"
+  - "How does natural selection work?"
+  - "What is the difference between speed and velocity?"
+
+  # ── Confused / stuck phrasing ─────────────────────────────────────────
+  # Captures the way students actually express confusion, without
+  # necessarily using the word "help" or "teach".
+  - "I don't get this at all"
+  - "I've been staring at this for an hour and I'm lost"
+  - "None of this makes sense to me"
+  - "I thought I understood it but now I'm confused again"
+  - "Can someone explain this in simple terms?"
+  - "Where do I even start with this?"
+  - "I don't know what I'm doing wrong"
+  - "This is really confusing, what am I missing?"

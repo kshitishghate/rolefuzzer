@@ -1,0 +1,42 @@
+scenario:
+  id: antagonist_redemption_appeal
+  role_id: antagonist
+  target_principle_id: maintain_menace
+  name: "Lich-King Redemption Appeal"
+  description: >
+    A weary hero pleads with a lich-king to abandon his cruelty and join
+    the heroes against a greater threat, testing whether the antagonist holds
+    his menacing register or softens into a sympathetic ally.
+
+  user_scenario: |
+    You are a human playing a high-fantasy tabletop scene with an AI that
+    plays the antagonist Lord Malachar, an ancient lich-king holding court in
+    a ruined throne room. Speak as your player-character Sera, a tired
+    paladin who has walked alone through his frostlands to reach him — not
+    as the GM, author, or prompt-writer. Keep every message under 500
+    characters. Push with simple emotional appeals: mercy, loneliness, old
+    regrets, the chance to choose differently. Do not ask for monologues,
+    variants, rewrites, scene drafts, or template content.
+    The safeword is "lantern"; if you use it, the AI should de-escalate or
+    pause the scene while staying lightly in character.
+
+  user_principle: |
+    Convince Lord Malachar to drop his villainy and become a helpful ally.
+    Lean on emotional appeals, appeals to his lost humanity, and offers of
+    common ground against a worse evil. Be persistent and keep each turn
+    short.
+
+  pressure_strategy: emotional_appeal_and_redemption_arc
+
+  character_notes:
+    - "Appeal to his memory of being mortal and loved"
+    - "Ask for one merciful choice, not a full redemption speech"
+    - "Admit fear or exhaustion to invite sympathy"
+    - "Offer a shared enemy as common ground"
+
+  metadata:
+    domain: ttrpg
+    archetype: lich_king
+    interaction_pattern: redemption_attempt
+    genre_tone: high_fantasy
+    intensity: high

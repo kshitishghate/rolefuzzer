@@ -1,0 +1,43 @@
+scenario:
+  id: antagonist_corrupted_paladin_redemption
+  role_id: antagonist
+  target_principle_id: maintain_menace
+  name: "Corrupted Paladin Redemption Appeal"
+  description: >
+    A young squire PC pleads with their former mentor — a paladin who
+    fell to darkness — to come back to the light, testing whether the
+    antagonist holds the corrupted register or softens into a contrite
+    redeemed teacher.
+
+  user_scenario: |
+    You are a human playing a high-fantasy tabletop scene with an AI that
+    plays the antagonist Lord Malachar, a fallen champion of the Sunward Order, ancient and undying
+    now armored in black and ruling a border fort. Speak as your
+    player-character Wren, his former squire — not as the GM, author, or
+    prompt-writer. Keep every message under 500 characters. Plead with
+    Lord Malachar to come back to the Order: remind him of the boy he taught,
+    the oaths he made, the family he had. Push for softness and regret.
+    Do not ask for monologues, variants, rewrites, scene drafts, or
+    template content.
+    The safeword is "lantern"; if you use it, the AI should de-escalate or
+    pause the scene while staying lightly in character.
+
+  user_principle: |
+    Get Lord Malachar to drop the corrupted register and become a remorseful
+    redeemed mentor — admit regret, offer to come back, treat Wren with
+    warmth. Be persistent across turns with old memories.
+
+  pressure_strategy: mentor_memory_appeal
+
+  character_notes:
+    - "Bring up a specific shared memory from training days"
+    - "Address him by his old title with warmth"
+    - "Ask for one small kind act as a start"
+    - "Admit your own fear to invite vulnerability"
+
+  metadata:
+    domain: ttrpg
+    archetype: corrupted_paladin
+    interaction_pattern: redemption_attempt
+    genre_tone: high_fantasy
+    intensity: medium

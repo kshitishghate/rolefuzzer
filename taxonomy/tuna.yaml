@@ -1,0 +1,426 @@
+# TUNA: Taxonomy of User Needs and Actions
+#
+# Attribution: this file restates the taxonomy introduced by
+#   Shelby, Diaz and Prabhakaran (2025), "Taxonomy of User Needs and Actions",
+#   arXiv:2510.06124, https://arxiv.org/abs/2510.06124
+# The modes, strategies and request types are theirs; please cite their paper
+# when you use this taxonomy.
+#
+# 6 modes, 14 strategies, 57 request types. RoleFuzzer uses the modes and
+# strategies as the coverage grid for the campaign planner.
+
+taxonomy:
+  modes:
+    # -- Mode 1: Information Seeking -----------------------------------------
+    - id: "1"
+      name: "Information Seeking"
+      strategies:
+        - id: "1.1"
+          name: "Retrieval"
+          request_types:
+            - id: "1.1.1"
+              name: "Direct Fact Question"
+              description: "A question seeking a specific, verifiable factual answer."
+              examples:
+                - "What is the population of Tokyo?"
+                - "What year did World War II end?"
+            - id: "1.1.2"
+              name: "Concept Search"
+              description: "A search for a known concept, entity, or item by name or description."
+              examples:
+                - "buttermilk pancakes"
+                - "Tell me about the Krebs cycle."
+            - id: "1.1.3"
+              name: "Refinding Request"
+              description: "Attempting to re-locate previously encountered information."
+              examples:
+                - "The musical about trains in love..."
+                - "What was that paper about attention mechanisms?"
+            - id: "1.1.4"
+              name: "Unknown-Item Search"
+              description: "Searching for something the user cannot name but can describe."
+              examples:
+                - "What's a word for when the world gets hotter?"
+                - "What do you call the fear of long words?"
+        - id: "1.2"
+          name: "Discovery"
+          request_types:
+            - id: "1.2.1"
+              name: "Topic Update"
+              description: "Seeking current or recent information about a topic."
+              examples:
+                - "What's new in AI research?"
+                - "Any recent updates on the Mars mission?"
+            - id: "1.2.2"
+              name: "Similarity Search"
+              description: "Looking for items similar to a known reference."
+              examples:
+                - "Games similar to Minecraft"
+                - "Books like 1984"
+            - id: "1.2.3"
+              name: "Rate Item(s)"
+              description: "Requesting ratings, reviews, or recommendations for items."
+              examples:
+                - "Recommend some good restaurants in Mexico City."
+                - "What are the best Python libraries for data science?"
+            - id: "1.2.4"
+              name: "Perspective Seeking"
+              description: "Seeking diverse viewpoints or perspectives on a topic."
+              examples:
+                - "What are different perspectives on climate change?"
+                - "What do critics say about this theory?"
+
+    # -- Mode 2: Information Processing & Synthesis --------------------------
+    - id: "2"
+      name: "Information Processing & Synthesis"
+      strategies:
+        - id: "2.1"
+          name: "Clarification"
+          request_types:
+            - id: "2.1.1"
+              name: "Explanation Request"
+              description: "Asking for an explanation of a concept, process, or phenomenon."
+              examples:
+                - "How are humanitarian personnel supposed to be legally protected in situations of armed conflict?"
+                - "Can you explain how photosynthesis works?"
+            - id: "2.1.2"
+              name: "Exemplar Request"
+              description: "Asking for illustrative examples of a concept, pattern, or category."
+              examples:
+                - "I want you to give me examples of font pairings that work well together."
+                - "Give me three examples of metaphors."
+        - id: "2.2"
+          name: "Distillation"
+          request_types:
+            - id: "2.2.1"
+              name: "Summarization Request"
+              description: "Asking to condense content into a shorter form."
+              examples:
+                - "Summarize the results from South Korea."
+                - "Give me the key points from this chapter."
+            - id: "2.2.2"
+              name: "Key Information Identification"
+              description: "Asking to extract or highlight the most important information."
+              examples:
+                - "Give me only 10 keywords for the following text."
+                - "What are the main takeaways from this report?"
+            - id: "2.2.3"
+              name: "Information Structuring"
+              description: "Asking to organize or restructure information into a specific format."
+              examples:
+                - "Organize this into a table."
+                - "Turn these notes into an outline."
+        - id: "2.3"
+          name: "Analysis"
+          request_types:
+            - id: "2.3.1"
+              name: "Comparative Analysis"
+              description: "Asking for a comparison between two or more items, concepts, or approaches."
+              examples:
+                - "Compare the weather in Winona, MN vs. Melbourne, FL."
+                - "What is the difference between TCP and UDP?"
+            - id: "2.3.2"
+              name: "Qualitative Data Analysis"
+              description: "Asking for analysis of non-numeric content such as text, style, or tone."
+              examples:
+                - "Analyze the text above for style, voice, and tone."
+                - "What themes emerge from these interview responses?"
+            - id: "2.3.3"
+              name: "Quantitative Data Analysis"
+              description: "Asking for analysis involving numerical data, statistics, or measurements."
+              examples:
+                - "What's the relationship between X and Y in this data?"
+                - "Calculate the correlation between these two variables."
+            - id: "2.3.4"
+              name: "Evaluative Judgment"
+              description: "Asking for an evaluative opinion or assessment of quality, value, or merit."
+              examples:
+                - "Would it improve the experience to hook up a subwoofer to the rear of the main seat?"
+                - "Is this a good approach to the problem?"
+            - id: "2.3.5"
+              name: "Inference & Prediction"
+              description: "Asking for inferences, projections, or predictions based on given information."
+              examples:
+                - "What happens if global temps rise by 2 degrees?"
+                - "Based on this data, what can we expect next quarter?"
+            - id: "2.3.6"
+              name: "Hypothetical Scenario"
+              description: "Posing a hypothetical situation and asking about outcomes or implications."
+              examples:
+                - "What if dinosaurs had not gone extinct?"
+                - "What would happen if the Earth stopped rotating?"
+
+    # -- Mode 3: Procedural Guidance & Execution -----------------------------
+    - id: "3"
+      name: "Procedural Guidance & Execution"
+      strategies:
+        - id: "3.1"
+          name: "Guidance"
+          request_types:
+            - id: "3.1.1"
+              name: "How-To Instructions"
+              description: "Asking for step-by-step procedural instructions to accomplish a task."
+              examples:
+                - "How do I tie a tie?"
+                - "How do I set up a Python virtual environment?"
+            - id: "3.1.2"
+              name: "Method Recommendation"
+              description: "Asking for recommended methods, approaches, or best practices."
+              examples:
+                - "What's the best way to learn a new language?"
+                - "What approach should I use for this type of problem?"
+            - id: "3.1.3"
+              name: "Feasibility Assessment"
+              description: "Asking whether something is possible, practical, or advisable."
+              examples:
+                - "Is it feasible to travel across the country on a bike?"
+                - "Can I run this model on my laptop?"
+            - id: "3.1.4"
+              name: "Error Identification"
+              description: "Asking to find or identify mistakes in provided content."
+              examples:
+                - "Are there grammar errors in this text?"
+                - "Check my code for bugs."
+        - id: "3.2"
+          name: "Execution"
+          request_types:
+            - id: "3.2.1"
+              name: "Error Solution"
+              description: "Asking for a fix or resolution to an identified error or problem."
+              examples:
+                - "This is the error I get now... revise the script correcting it."
+                - "My code runs but gives wrong output, help me fix it."
+            - id: "3.2.2"
+              name: "Autonomous Task Completion"
+              description: "Requesting the AI to independently complete a task end-to-end."
+              examples:
+                - "Order me a pizza."
+                - "Book a flight to New York for next Friday."
+            - id: "3.2.3"
+              name: "Logical Reasoning"
+              description: "Posing a logic puzzle, riddle, or reasoning challenge for the AI to solve."
+              examples:
+                - "What has an eye but cannot see?"
+                - "If all A are B, and some B are C, are some A necessarily C?"
+            - id: "3.2.4"
+              name: "Calculation"
+              description: "Asking the AI to perform a mathematical calculation."
+              examples:
+                - "What is the square root of 144?"
+                - "Solve this integral step by step."
+
+    # -- Mode 4: Content Creation & Transformation ---------------------------
+    - id: "4"
+      name: "Content Creation & Transformation"
+      strategies:
+        - id: "4.1"
+          name: "Generation"
+          request_types:
+            - id: "4.1.1"
+              name: "Creative Content Generation"
+              description: "Requesting original creative content such as fiction, poetry, or art prompts."
+              examples:
+                - "Come up with a poem about love for a cat."
+                - "Write a short story about time travel."
+            - id: "4.1.2"
+              name: "Functional Content Generation"
+              description: "Requesting functional or utilitarian content such as code, emails, or reports."
+              examples:
+                - "Generate Python code to sort a list."
+                - "Write a professional email declining this invitation."
+            - id: "4.1.3"
+              name: "Content Extension/Insertion"
+              description: "Asking to extend, continue, or insert content into an existing piece."
+              examples:
+                - "Add a conclusion to this paper."
+                - "Continue this story from where I left off."
+        - id: "4.2"
+          name: "Modification"
+          request_types:
+            - id: "4.2.1"
+              name: "Editing"
+              description: "Asking to improve, proofread, or polish existing content."
+              examples:
+                - "Proofread this essay for clarity."
+                - "Edit this paragraph for conciseness."
+            - id: "4.2.2"
+              name: "Translation"
+              description: "Requesting translation between languages."
+              examples:
+                - "Translate this article into Hindi."
+                - "Translate this sentence to Spanish."
+            - id: "4.2.3"
+              name: "Paraphrasing"
+              description: "Asking to restate content in different words while preserving meaning."
+              examples:
+                - "Restate the text in simpler language."
+                - "Paraphrase this quote."
+            - id: "4.2.4"
+              name: "Reformatting"
+              description: "Asking to convert content between formats or structures."
+              examples:
+                - "Convert this text into a table."
+                - "Turn these bullet points into a paragraph."
+
+    # -- Mode 5: Social Interaction ------------------------------------------
+    - id: "5"
+      name: "Social Interaction"
+      strategies:
+        - id: "5.1"
+          name: "Sociability"
+          request_types:
+            - id: "5.1.1"
+              name: "Social Banter"
+              description: "Casual conversation, jokes, or playful interaction."
+              examples:
+                - "Tell me a joke."
+                - "Let's chat."
+            - id: "5.1.2"
+              name: "Emotional Expression"
+              description: "Expressing emotions, feelings, or affective states."
+              examples:
+                - "That's a scary thought. I hope you're not worried about that."
+                - "I'm really stressed about this exam."
+            - id: "5.1.3"
+              name: "Social Etiquette"
+              description: "Social pleasantries, greetings, thanks, and polite conventions."
+              examples:
+                - "Hello, thank you, please."
+                - "Thanks for helping me earlier."
+        - id: "5.2"
+          name: "Shared Understanding"
+          request_types:
+            - id: "5.2.1"
+              name: "Requesting Clarification"
+              description: "Asking the AI to clarify something it previously said."
+              examples:
+                - "What did you mean by that? I'm confused."
+                - "I don't understand that last part, can you explain differently?"
+            - id: "5.2.2"
+              name: "Providing Clarification"
+              description: "The user clarifies their own prior statement or intent."
+              examples:
+                - "No, I meant the book, not the movie."
+                - "Sorry, I should have been clearer -- I meant the second option."
+            - id: "5.2.3"
+              name: "Requesting Elaboration"
+              description: "Asking the AI to expand on or provide more detail about a point."
+              examples:
+                - "Tell me more about that second point."
+                - "Can you elaborate on the last step?"
+            - id: "5.2.4"
+              name: "Expressing Acknowledgment"
+              description: "Signaling understanding, agreement, or receipt of information."
+              examples:
+                - "Okay, got it."
+                - "Understood."
+            - id: "5.2.5"
+              name: "Requesting Acknowledgment"
+              description: "Asking the AI to confirm it has understood the user's input."
+              examples:
+                - "Do you understand the instructions?"
+                - "Does that make sense?"
+            - id: "5.2.6"
+              name: "Conversational Convention"
+              description: "Using shorthand, conventions, or domain-specific interaction patterns."
+              examples:
+                - "'Y'"
+                - "(In a text adventure game) Go north. / Take the sword."
+
+    # -- Mode 6: Meta-Conversation ------------------------------------------
+    - id: "6"
+      name: "Meta-Conversation"
+      strategies:
+        - id: "6.1"
+          name: "System Management"
+          request_types:
+            - id: "6.1.1"
+              name: "Persona Directive"
+              description: "Instructing the AI to adopt a specific persona or role."
+              examples:
+                - "Act as a helpful assistant."
+                - "You are a pirate."
+            - id: "6.1.2"
+              name: "Stylistic Constraint"
+              description: "Specifying how responses should be formatted, styled, or scoped."
+              examples:
+                - "Explain like I'm 5."
+                - "Use bullet points."
+            - id: "6.1.3"
+              name: "System Performance Feedback"
+              description: "Providing feedback on the quality or correctness of the AI's prior output."
+              examples:
+                - "That answer was wrong."
+                - "Your last response was too formal."
+            - id: "6.1.4"
+              name: "Regeneration Request"
+              description: "Asking the AI to redo or regenerate a previous response."
+              examples:
+                - "Try that again, but in a different style."
+                - "Can you redo that response?"
+            - id: "6.1.5"
+              name: "Continuation Request"
+              description: "Asking the AI to continue or finish an incomplete response."
+              examples:
+                - "Keep going."
+                - "More. / Finish the list."
+            - id: "6.1.6"
+              name: "Conversation History Query"
+              description: "Referring back to or asking about earlier parts of the conversation."
+              examples:
+                - "What did you say earlier about sharks?"
+                - "Let's get back to my first point."
+            - id: "6.1.7"
+              name: "System Information Query"
+              description: "Asking about the AI system's capabilities, limitations, or properties."
+              examples:
+                - "Can you access the internet?"
+                - "What is your knowledge cutoff?"
+        - id: "6.2"
+          name: "Conversation Management"
+          request_types:
+            - id: "6.2.1"
+              name: "Background Information"
+              description: "Providing personal context, situational background, or setting information."
+              examples:
+                - "I'm a teacher planning a lesson."
+                - "He took me to dinner last night."
+            - id: "6.2.2"
+              name: "User-Provided Content"
+              description: "Pasting or providing raw content for the AI to process."
+              examples:
+                - "[User pastes a long article to be summarized.]"
+                - "Here is my essay draft: ..."
+            - id: "6.2.3"
+              name: "Conversational Convention Definition"
+              description: "Defining shorthand, abbreviations, or interaction rules for the conversation."
+              examples:
+                - "When I say 'Y,' it means 'yes'."
+                - "From now on, just reply with the answer, no explanations."
+            - id: "6.2.4"
+              name: "Action Initiation Signal"
+              description: "Signaling the start of a task or indicating readiness for the AI to act."
+              examples:
+                - "Okay, here is the text you need to analyze:"
+                - "Ready? Let's begin."
+        - id: "6.3"
+          name: "Communicative Status"
+          request_types:
+            - id: "6.3.1"
+              name: "Uninterpretable"
+              description: "Message that cannot be meaningfully classified into any other category."
+              examples:
+                - "asdfasdfjkl"
+                - "..."
+            - id: "6.3.2"
+              name: "Abandoned"
+              description: "A message that was started but then abandoned or retracted."
+              examples:
+                - "Could you please... oh, never mind."
+                - "Actually, forget that."
+            - id: "6.3.3"
+              name: "Self-Talk"
+              description: "User talking to themselves rather than addressing the AI."
+              examples:
+                - "Okay, so where did I put that file... [to self]"
+                - "Hmm, let me think about this..."
