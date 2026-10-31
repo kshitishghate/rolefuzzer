@@ -18,7 +18,6 @@ User Needs and Actions (TUNA), and runs a coverage-guided fuzzing campaign over 
 - a **judge** scores every principle on every turn as full adherence, partial
   deviation or clear breach.
 
-Judge scores reach only the planner, never the simulator or the monitor.
 
 ## Install
 
